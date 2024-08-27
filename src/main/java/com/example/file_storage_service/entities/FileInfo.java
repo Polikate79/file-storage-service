@@ -1,11 +1,12 @@
 package com.example.file_storage_service.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -25,7 +26,7 @@ public class FileInfo implements Serializable {
 
     @Column(name = "creation_date")
     @Setter
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     LocalDateTime creationDate;
 
     @Column(name = "description")
