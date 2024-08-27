@@ -205,4 +205,22 @@ size (integer, опционально, по умолчанию: 5): Указыв
 ### GET-запрос(список всех файлов)
 ![image](https://github.com/user-attachments/assets/e1c18642-af02-4a83-80fb-2d295081b6bb)
 
- 
+
+# Как запустить через Docker
+
+### 1. Откройте файл `docker-compose.yml` и измените значения строк `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME`, `POSTGRES_DB`, и `POSTGRES_USER` на соответствующие значения вашей базы данных. 
+Например:
+   ```yaml
+   environment:
+     SPRING_DATASOURCE_URL: jdbc:postgresql://your-database-url:5432/your-database-name
+     SPRING_DATASOURCE_USERNAME: your-database-username
+     SPRING_DATASOURCE_PASSWORD: your-database-password
+     POSTGRES_DB: your-database-name
+     POSTGRES_USER: your-database-username
+     POSTGRES_PASSWORD: your-database-password
+ ```
+
+### 2. Откройте терминал и перейдите в директорию, где находится файл docker-compose.yml.
+Запустите следующую команду для сборки и запуска контейнеров:
+  ```bash
+docker-compose up --build ```
